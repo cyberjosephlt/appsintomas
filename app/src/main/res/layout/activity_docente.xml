@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
+    tools:context=".docente">
+
+    <TextView
+        android:id="@+id/txttitulod"
+        android:layout_width="149dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="7dp"
+        android:text="BIENVENIDO"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txttitulod3"
+        app:layout_constraintEnd_toEndOf="@+id/txttitulod3"
+        app:layout_constraintStart_toStartOf="@+id/txttitulod2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txttitulod2"
+        android:layout_width="131dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="13dp"
+        android:text="Estado: Habilitado"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/listasintomas"
+        app:layout_constraintStart_toStartOf="@+id/listasintomas"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txttitulod3"
+        android:layout_width="120dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginBottom="8dp"
+        android:text="Bruce Banner"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txttitulod" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="75dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/txttitulod2"
+        app:layout_constraintEnd_toEndOf="@+id/txttitulod3"
+        app:layout_constraintStart_toStartOf="@+id/txttitulod3"
+        app:layout_constraintTop_toBottomOf="@+id/txttitulod3"
+        app:srcCompat="@drawable/avatar1"
+        tools:srcCompat="@drawable/avatar1" />
+
+    <ListView
+        android:id="@+id/listasintomas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="218dp"
+        android:layout_marginBottom="98dp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/guardarsintomas"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="23dp"
+        android:text="GUARDAR"
+        app:layout_constraintBaseline_toBaselineOf="@+id/guardarsintomas2"
+        app:layout_constraintEnd_toStartOf="@+id/guardarsintomas2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/guardarsintomas2"
+        android:layout_width="117dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="170dp"
+        android:onClick="llamarhd"
+        android:text="HISTORIAL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guardarsintomas"
+        app:layout_constraintTop_toBottomOf="@+id/listasintomas" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="119dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="115dp"
+        android:onClick="llamarcd"
+        android:text="CURSOS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listasintomas" />
+</androidx.constraintlayout.widget.ConstraintLayout>

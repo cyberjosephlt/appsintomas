@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lbltitulo2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="68dp"
+        android:onClick="llamar4"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/btnsalir" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="21dp"
+        android:onClick="llamar2"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btnsalir" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="45dp"
+        android:onClick="llamar"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btningresar" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/lbltitulo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icono" />
+
+    <TextView
+        android:id="@+id/lbltitulo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="99dp"
+        android:text="REPORTAR SINTOMAS"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lbltitulo3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/lbltitulo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="19dp"
+        android:text="USUARIO"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtusuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbltitulo1" />
+
+    <TextView
+        android:id="@+id/lbltitulo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="CONTRASEÑA"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtcontrasena"
+        app:layout_constraintStart_toStartOf="@+id/txtusuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtusuario" />
+
+    <EditText
+        android:id="@+id/txtcontrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="54dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="INGRESE  CONTRASEÑA"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btningresar"
+        app:layout_constraintEnd_toEndOf="@+id/btnsalir"
+        app:layout_constraintTop_toBottomOf="@+id/lbltitulo4" />
+
+    <Button
+        android:id="@+id/btningresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="120dp"
+        android:onClick="llamar"
+        android:text="INGRESAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnsalir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcontrasena" />
+
+    <Button
+        android:id="@+id/btnsalir"
+        android:layout_width="119dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="68dp"
+        android:text="SALIR"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btningresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btningresar" />
+
+    <EditText
+        android:id="@+id/txtusuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="INGRESE USUARIO"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lbltitulo4"
+        app:layout_constraintEnd_toEndOf="@+id/txtcontrasena"
+        app:layout_constraintStart_toStartOf="@+id/txtcontrasena"
+        app:layout_constraintTop_toBottomOf="@+id/lbltitulo3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
