@@ -9,9 +9,12 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
+import co.edu.unab.appsintomas.entities.cursos;
+
 public class cursosdocente extends AppCompatActivity {
     private ListView listview;
     private ArrayList<String> textos;
+    private ArrayList<String> cursosdocente = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +29,15 @@ public class cursosdocente extends AppCompatActivity {
         //get the spinner from the xml.
         Spinner dropdown = findViewById(R.id.listspinner);
         //create a list of items for the spinner.
-        String[] items = new String[]{"ALGEBRA LINEAL", "ESTADÍSTICA", "MATEMÁTICAS DISCRETAS"};
+        cursos curso1 = new cursos("455988","ALGEBRA LINEAL","546467","DIURNA");
+        cursos curso2 = new cursos("5235646","ESTADISTICA","52555","NOCHE");
+        cursosdocente.add(curso1.getNombre_curso());
+        cursosdocente.add(curso2.getNombre_curso());
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cursosdocente);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
 

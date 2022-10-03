@@ -77,27 +77,19 @@ public class fragmentCursos extends Fragment {
         View root=inflater.inflate(R.layout.fragment_cursos, container, false);
 
 
-        ArrayList <String> artest=new ArrayList<String>();
 
-        artest.add("1");
         listview = (ListView) root.findViewById(R.id.listacursos);
-        cursos cursosn1= new cursos("1234","MATEMATICAS DISCRETAS","0101","0202","DIURNA");
-        cursos cursosn2= new cursos("4321","ALGEBRA LINEA","03013","0404","TARDE");
-        cursos cursosn3= new cursos("5466","SISTEMAS OPERATIVOS","03013","0404","TARDE");
-        cursos cursosn4= new cursos("0125","INTELIGENCIA ARTIFICIAL","03013","0404","TARDE");
-        cursos cursosn5= new cursos("4345","ALGORITMOS","03013","0404","TARDE");
+        cursos cursosn1= new cursos("1234","MATEMATICAS DISCRETAS","0101","DIURNA");
+        cursos cursosn2= new cursos("4321","ALGEBRA LINEA","03013","NOCHE");
+        cursos cursosn3= new cursos("5466","SISTEMAS OPERATIVOS","03013","DIURNA");
+        cursos cursosn4= new cursos("0125","INTELIGENCIA ARTIFICIAL","03013","NOCHE");
+        cursos cursosn5= new cursos("4345","ALGORITMOS","03013","NOCHE");
         cursolist.add(cursosn1);
         cursolist.add(cursosn2);
         cursolist.add(cursosn3);
         cursolist.add(cursosn4);
         cursolist.add(cursosn5);
 
-        /*textos = new ArrayList<St""ring>();
-        textos .add("MATEMATICAS DISCRETAS");
-        textos .add("ALGEBRA LINEAL");
-        textos .add("SISTEMAS OPERATIVOS");
-        textos .add("INTELIGENCIA ARTIFICIAL");
-        textos .add("ALGORITMOS");*/
 
         ArrayAdapter<cursos> adapter = new ArrayAdapter<cursos>(getContext(),
                 android.R.layout.simple_list_item_1,

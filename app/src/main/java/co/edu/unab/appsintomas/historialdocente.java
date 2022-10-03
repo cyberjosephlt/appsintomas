@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import co.edu.unab.appsintomas.entities.reporte;
+
 public class historialdocente extends AppCompatActivity {
     private ListView listareporte;
+    private ArrayList<reporte> listadoreportes= new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,21 +27,15 @@ public class historialdocente extends AppCompatActivity {
     public void setup(){
 
         listareporte = findViewById(R.id.listareporte);
+        reporte historial = new reporte("457855","65895","22-09-2022",1,0,1,0,1);
         // Initializing a new list
-        List<String> lista = Arrays.asList(
-                "15-07-2022:HABILITADO",
-                "12-06-2022:HABILITADO",
-                "13-05-2022:HABILITADO",
-                "10-04-2022:HABILITADO",
-                "09-03-2022:HABILITADO"
-
-        );
+        listadoreportes.add(historial);
 
         // Initialize a new ArrayAdapter
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+        ArrayAdapter<reporte> adapter = new ArrayAdapter<reporte>(
                 getApplicationContext(),
                 android.R.layout.simple_list_item_1,
-                lista
+                listadoreportes
         );
 
         // Set the adapter for ListView

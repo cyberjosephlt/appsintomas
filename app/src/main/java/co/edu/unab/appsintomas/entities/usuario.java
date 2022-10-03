@@ -100,4 +100,18 @@ public class usuario {
     public void setTipo_usuario(String tipo_usuario) {
         this.tipo_usuario = tipo_usuario;
     }
+
+    @Override
+    public String toString() {
+        return "usuario{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", tipo_doc='" + tipo_doc + '\'' +
+                ", n_documento=" + n_documento +
+                ", estado_salud='" + estado_salud + '\'' +
+                ", tipo_usuario='" + tipo_usuario + '\'' +
+                '}';
+    }
 }

@@ -13,6 +13,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import co.edu.unab.appsintomas.R;
+import co.edu.unab.appsintomas.entities.cursos;
+import co.edu.unab.appsintomas.entities.usuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +33,7 @@ public class fragmentDocentes extends Fragment {
     private String mParam2;
     private ListView listview;
     private ArrayList<String> textos;
+    private ArrayList<usuario> docentelist = new ArrayList<usuario>();
     public fragmentDocentes() {
         // Required empty public constructor
     }
@@ -68,14 +71,15 @@ public class fragmentDocentes extends Fragment {
         // Inflate the layout for this fragment
         View root=inflater.inflate(R.layout.fragment_docentes, container, false);
         listview = (ListView) root.findViewById(R.id.listadodocentes);
-        textos = new ArrayList<String>();
-        textos .add("JUAN LEÓN GARCIA");
-        textos .add("LINA GUAITOTO GARCES");
-        textos .add("BRAYAN MOSQUERA SITÚ");
-        textos .add("ANDRES VALVERDE LUCUMÍ");
-        textos .add("ANDREA MARTINEZ RENGIFO");
+        usuario user= new usuario("1234","Bruce Banner"
+                ,"HUlk","enojado2022","CE",56474,
+                "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Mark_Ruffalo_as_%22Professor_Hulk%22.jpeg/1280px-Mark_Ruffalo_as_%22Professor_Hulk%22.jpeg",
+                "habilitado","DOCENTE");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, textos);
+        docentelist.add(user);
+        ArrayAdapter<usuario> adapter = new ArrayAdapter<usuario>(getContext(),
+                android.R.layout.simple_list_item_1,
+                docentelist);
         listview.setAdapter(adapter);
 
 

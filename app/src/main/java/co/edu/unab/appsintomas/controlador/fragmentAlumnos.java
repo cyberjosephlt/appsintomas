@@ -13,6 +13,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import co.edu.unab.appsintomas.R;
+import co.edu.unab.appsintomas.entities.usuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +31,7 @@ public class fragmentAlumnos extends Fragment {
     private String mParam1;
     private String mParam2;
     private ListView listview;
+    private ArrayList<usuario> docentelist = new ArrayList<usuario>();
     private ArrayList<String> textos;
     public fragmentAlumnos() {
         // Required empty public constructor
@@ -68,14 +70,15 @@ public class fragmentAlumnos extends Fragment {
         // Inflate the layout for this fragment
         View root=inflater.inflate(R.layout.fragment_alumnos, container, false);
         listview = (ListView) root.findViewById(R.id.listaalumnos);
-        textos = new ArrayList<String>();
-        textos .add("STEVEN LUCUMI");
-        textos .add("HAROLD BENITEZ");
-        textos .add("FRANCIA CALDERON");
-        textos .add("LINEY CACERES");
-        textos .add("LINA CASTRILLON");
+        usuario user= new usuario("56789","Steve Jobs"
+                ,"applebest","manzanita2022","CE",46574,
+                "https://img1.freepng.es/20171220/vwq/steve-jobs-png-5a3a404a148806.97453834151376698608417047.jpg",
+                "inhabilitado","ALUMNO");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, textos);
+        docentelist.add(user);
+        ArrayAdapter<usuario> adapter = new ArrayAdapter<usuario>(getContext(),
+                android.R.layout.simple_list_item_1,
+                docentelist);
         listview.setAdapter(adapter);
 
 
