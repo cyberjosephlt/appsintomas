@@ -17,7 +17,7 @@
             android:name=".historialalumnos"
             android:exported="false" />
         <activity
-            android:name=".alumno"
+            android:name=".activity_alumno"
             android:exported="false" />
         <activity
             android:name=".cursosdocente"
@@ -26,10 +26,10 @@
             android:name=".historialdocente"
             android:exported="false" />
         <activity
-            android:name=".docente"
+            android:name=".activity_docente"
             android:exported="false" />
         <activity
-            android:name=".administrador"
+            android:name=".activity_administrador"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

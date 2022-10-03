@@ -11,21 +11,21 @@ import android.widget.ListView;
 import java.util.Arrays;
 import java.util.List;
 
-public class docente extends AppCompatActivity {
-    private ListView listasintomas;
-
+public class activity_alumno extends AppCompatActivity {
+    private ListView listasintomasa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_docente);
+        setContentView(R.layout.activity_alumno);
         getSupportActionBar().hide();
-        setup();
 
+        setup();
     }
+
 
     public void setup(){
 
-        listasintomas = findViewById(R.id.listasintomas);
+        listasintomasa= findViewById(R.id.listasintomasal);
         // Initializing a new list
         List<String> lista = Arrays.asList(
                 "¿TIENE GRIPA?",
@@ -44,18 +44,14 @@ public class docente extends AppCompatActivity {
         );
 
         // Set the adapter for ListView
-        listasintomas.setAdapter(adapter);
-        listasintomas.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        listasintomasa.setAdapter(adapter);
+        listasintomasa.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
     }
 
-    public void llamarhd(View view){
-        Intent intent = new Intent(this, historialdocente.class);
+    public void llamar5(View view){
+        Intent intent = new Intent(this, historialalumnos.class);
         startActivity(intent);
 
     }
-    public void llamarcd(View view){
-        Intent intent = new Intent(this, cursosdocente.class);
-        startActivity(intent);
 
-    }
 }

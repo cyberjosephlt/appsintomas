@@ -1,5 +1,6 @@
 package co.edu.unab.appsintomas.controlador;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,11 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import co.edu.unab.appsintomas.R;
+import co.edu.unab.appsintomas.entities.cursos;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,12 +29,12 @@ public class fragmentCursos extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private ArrayList<cursos> cursolist = new ArrayList<>();
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private ListView listview;
-    private ArrayList<String> textos;
+    //private ArrayList<String> textos;
     public fragmentCursos() {
         // Required empty public constructor
     }
@@ -71,18 +75,42 @@ public class fragmentCursos extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root=inflater.inflate(R.layout.fragment_cursos, container, false);
+
+
+        ArrayList <String> artest=new ArrayList<String>();
+
+        artest.add("1");
         listview = (ListView) root.findViewById(R.id.listacursos);
-        textos = new ArrayList<String>();
+        cursos cursosn1= new cursos("1234","MATEMATICAS DISCRETAS","0101","0202","DIURNA");
+        cursos cursosn2= new cursos("4321","ALGEBRA LINEA","03013","0404","TARDE");
+        cursos cursosn3= new cursos("5466","SISTEMAS OPERATIVOS","03013","0404","TARDE");
+        cursos cursosn4= new cursos("0125","INTELIGENCIA ARTIFICIAL","03013","0404","TARDE");
+        cursos cursosn5= new cursos("4345","ALGORITMOS","03013","0404","TARDE");
+        cursolist.add(cursosn1);
+        cursolist.add(cursosn2);
+        cursolist.add(cursosn3);
+        cursolist.add(cursosn4);
+        cursolist.add(cursosn5);
+
+        /*textos = new ArrayList<St""ring>();
         textos .add("MATEMATICAS DISCRETAS");
         textos .add("ALGEBRA LINEAL");
         textos .add("SISTEMAS OPERATIVOS");
         textos .add("INTELIGENCIA ARTIFICIAL");
-        textos .add("ALGORITMOS");
+        textos .add("ALGORITMOS");*/
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, textos);
+        ArrayAdapter<cursos> adapter = new ArrayAdapter<cursos>(getContext(),
+                android.R.layout.simple_list_item_1,
+                cursolist);
         listview.setAdapter(adapter);
+
         return root;
     }
+
+
+
+
+
 
 
 }

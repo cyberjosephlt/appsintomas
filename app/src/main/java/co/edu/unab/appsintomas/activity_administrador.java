@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import co.edu.unab.appsintomas.controlador.PagerController;
 
-public class administrador extends AppCompatActivity {
+public class activity_administrador extends AppCompatActivity {
  private TabLayout tabLayout;
  private ViewPager viewPager;
  private TabItem tabcursos,tabdocentes,tabalumnos;
