@@ -34,7 +34,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/listasintomas"
         app:layout_constraintStart_toStartOf="@+id/listasintomas"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imagendocente" />
 
     <TextView
         android:id="@+id/txttitulod3"
@@ -46,12 +46,12 @@
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/imagendocente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txttitulod" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagendocente"
         android:layout_width="75dp"
         android:layout_height="58dp"
         android:layout_marginStart="15dp"
