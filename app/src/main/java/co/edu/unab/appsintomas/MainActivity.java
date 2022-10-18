@@ -15,21 +15,5 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void llamar(View view){
-        Intent intent = new Intent(this, activity_administrador.class);
-        startActivity(intent);
 
-    }
-
-    public void llamar2(View view){
-        Intent intent = new Intent(this, activity_docente.class);
-        startActivity(intent);
-
-    }
-
-    public void llamar4(View view){
-        Intent intent = new Intent(this, activity_alumno.class);
-        startActivity(intent);
-
-    }
 }

@@ -8,43 +8,6 @@
     android:background="@drawable/bg_color"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="68dp"
-        android:onClick="llamar4"
-        android:text="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/btnsalir" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="21dp"
-        android:onClick="llamar2"
-        android:text="2"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/btnsalir" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="45dp"
-        android:onClick="llamar"
-        android:text="1"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btningresar" />
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="184dp"
