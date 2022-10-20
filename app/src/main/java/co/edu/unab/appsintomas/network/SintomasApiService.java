@@ -18,8 +18,11 @@ public interface SintomasApiService {
     Call<RespuestaLogin> login(@Field("usuario") String email, @Field("contrasena") String contrasena);
 
 
-    @GET("usuario")
-    Call<List<usuario>> getUsuarios(@Header("Autorization") String authToken);
+    @GET("docente")
+    Call<List<usuario>> getDocente(@Header("Autorizhation") String authToken);
+
+    @GET("estudiante")
+    Call<List<usuario>> getEstudiante(@Header("Autorizhation") String authToken);
 
 
 

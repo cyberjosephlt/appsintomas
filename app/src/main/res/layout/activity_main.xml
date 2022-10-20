@@ -70,8 +70,9 @@
         android:layout_marginBottom="54dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="INGRESE  CONTRASEÑA"
+        android:hint="CONTRASEÑA"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/btningresar"
         app:layout_constraintEnd_toEndOf="@+id/btnsalir"
         app:layout_constraintTop_toBottomOf="@+id/lbltitulo4" />
@@ -83,7 +84,7 @@
         android:layout_marginStart="78dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="120dp"
-        android:onClick="llamar"
+        android:onClick="ingresar"
         android:text="INGRESAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnsalir"
@@ -95,10 +96,12 @@
         android:layout_width="119dp"
         android:layout_height="47dp"
         android:layout_marginEnd="68dp"
+        android:onClick="salir"
         android:text="SALIR"
         app:layout_constraintBaseline_toBaselineOf="@+id/btningresar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btningresar" />
+        app:layout_constraintStart_toEndOf="@+id/btningresar"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/txtusuario"
@@ -107,8 +110,9 @@
         android:layout_marginBottom="29dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="INGRESE USUARIO"
-        android:inputType="textPersonName"
+        android:hint="EMAIL"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/lbltitulo4"
         app:layout_constraintEnd_toEndOf="@+id/txtcontrasena"
         app:layout_constraintStart_toStartOf="@+id/txtcontrasena"
