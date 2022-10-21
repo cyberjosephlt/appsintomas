@@ -54,10 +54,10 @@ public class activity_alumno extends AppCompatActivity {
 
 
         //imagen picassoI
-        usuario user= new usuario("56789","Steve Jobs"
-                ,"applebest","manzanita2022","CE",46574,
+        usuario user= new usuario(56789,56992,"Steve"
+                ,"Jobs","applebest","manzanita2022","CE",46574,
                 "https://img1.freepng.es/20171220/vwq/steve-jobs-png-5a3a404a148806.97453834151376698608417047.jpg",
-                "inhabilitado","ALUMNO");
+                0,"ALUMNO");
         String urlimg= user.getUrl_foto();
         ImageView imgdocente= findViewById(R.id.imagenalumno);
         Picasso.get()

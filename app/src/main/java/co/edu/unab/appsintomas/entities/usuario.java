@@ -2,43 +2,67 @@ package co.edu.unab.appsintomas.entities;
 
 public class usuario {
 
-    private String id;
-    private String nombre;
-    private String usuario;
+    private int id;
+    private int user_id;
+    private String nombres;
+    private String apellidos;
+    private String profesion;
     private String contrasena;
     private String tipo_doc;
-    private int n_documento;
+    private int documento;
     private String url_foto;
-    private String estado_salud;
+    private int estado;
     private String tipo_usuario;
 
 
-    public usuario(String id, String nombre, String usuario, String contrasena, String tipo_doc, int n_documento, String url_foto, String estado_salud, String tipo_usuario) {
+    public usuario(int id,int user_id, String nombres, String apellidos,String profesion, String contrasena, String tipo_doc, int documento, String url_foto, int estado, String tipo_usuario) {
         this.id = id;
-        this.nombre = nombre;
-        this.usuario = usuario;
+        this.user_id=user_id;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.profesion = profesion;
         this.contrasena = contrasena;
         this.tipo_doc = tipo_doc;
-        this.n_documento = n_documento;
+        this.documento = documento;
+        this.estado = estado;
         this.url_foto = url_foto;
-        this.estado_salud = estado_salud;
         this.tipo_usuario = tipo_usuario;
+    }
+
+    public usuario(int id, int user_id, String nombres, String apellidos, String profesion, int documento, int estado,String url_foto) {
+        this.id = id;
+        this.user_id = user_id;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.profesion = profesion;
+        this.documento = documento;
+        this.estado = estado;
+        this.url_foto = url_foto;
+
     }
 
     public usuario() {
     }
 
+    
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
+    }
+    public String getApellidoss() {
+        return apellidos;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public String getProfesion() {
+        return profesion;
     }
 
     public String getContrasena() {
@@ -49,32 +73,40 @@ public class usuario {
         return tipo_doc;
     }
 
-    public int getN_documento() {
-        return n_documento;
+    public int getdocumento() {
+        return documento;
     }
 
     public String getUrl_foto() {
         return url_foto;
     }
 
-    public String getEstado_salud() {
-        return estado_salud;
+    public int getestado() {
+        return estado;
     }
 
     public String getTipo_usuario() {
         return tipo_usuario;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUser_Id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setnombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setProfesion(String usuario) {
+        this.profesion = profesion;
     }
 
     public void setContrasena(String contrasena) {
@@ -85,16 +117,16 @@ public class usuario {
         this.tipo_doc = tipo_doc;
     }
 
-    public void setN_documento(int n_documento) {
-        this.n_documento = n_documento;
+    public void setdocumento(int documento) {
+        this.documento = documento;
     }
 
     public void setUrl_foto(String url_foto) {
         this.url_foto = url_foto;
     }
 
-    public void setEstado_salud(String estado_salud) {
-        this.estado_salud = estado_salud;
+    public void setestado(int estado) {
+        this.estado = estado;
     }
 
     public void setTipo_usuario(String tipo_usuario) {
@@ -104,14 +136,14 @@ public class usuario {
     @Override
     public String toString() {
         return "usuario{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", usuario='" + usuario + '\'' +
-                ", contrasena='" + contrasena + '\'' +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", profesion='" + profesion + '\'' +
                 ", tipo_doc='" + tipo_doc + '\'' +
-                ", n_documento=" + n_documento +
-                ", estado_salud='" + estado_salud + '\'' +
-                ", tipo_usuario='" + tipo_usuario + '\'' +
+                ", documento=" + documento +
+                ", estado=" + estado +
                 '}';
     }
 }

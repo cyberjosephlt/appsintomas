@@ -70,10 +70,10 @@ public class fragmentAlumnos extends Fragment {
         // Inflate the layout for this fragment
         View root=inflater.inflate(R.layout.fragment_alumnos, container, false);
         listview = (ListView) root.findViewById(R.id.listaalumnos);
-        usuario user= new usuario("56789","Steve Jobs"
-                ,"applebest","manzanita2022","CE",46574,
+        usuario user= new usuario(56789,4896,"Steve"
+                ,"Jobs","applebest","manzanita2022","CE",46574,
                 "https://img1.freepng.es/20171220/vwq/steve-jobs-png-5a3a404a148806.97453834151376698608417047.jpg",
-                "inhabilitado","ALUMNO");
+                1,"ALUMNO");
 
         docentelist.add(user);
         ArrayAdapter<usuario> adapter = new ArrayAdapter<usuario>(getContext(),

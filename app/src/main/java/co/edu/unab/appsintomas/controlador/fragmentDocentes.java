@@ -71,10 +71,10 @@ public class fragmentDocentes extends Fragment {
         // Inflate the layout for this fragment
         View root=inflater.inflate(R.layout.fragment_docentes, container, false);
         listview = (ListView) root.findViewById(R.id.listadodocentes);
-        usuario user= new usuario("1234","Bruce Banner"
-                ,"HUlk","enojado2022","CE",56474,
+        usuario user= new usuario(1234,7863,"Bruce"
+                ,"Banner","HUlk","enojado2022","CE",56474,
                 "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Mark_Ruffalo_as_%22Professor_Hulk%22.jpeg/1280px-Mark_Ruffalo_as_%22Professor_Hulk%22.jpeg",
-                "habilitado","DOCENTE");
+                1,"DOCENTE");
 
         docentelist.add(user);
         ArrayAdapter<usuario> adapter = new ArrayAdapter<usuario>(getContext(),

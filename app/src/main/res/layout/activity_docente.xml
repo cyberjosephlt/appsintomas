@@ -17,8 +17,8 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txttitulod3"
-        app:layout_constraintEnd_toEndOf="@+id/txttitulod3"
+        app:layout_constraintBottom_toTopOf="@+id/txtnombredocente"
+        app:layout_constraintEnd_toEndOf="@+id/txtnombredocente"
         app:layout_constraintStart_toStartOf="@+id/txttitulod2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imagendocente" />
 
     <TextView
-        android:id="@+id/txttitulod3"
+        android:id="@+id/txtnombredocente"
         android:layout_width="120dp"
         android:layout_height="36dp"
         android:layout_marginStart="133dp"
@@ -58,9 +58,9 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="13dp"
         app:layout_constraintBottom_toTopOf="@+id/txttitulod2"
-        app:layout_constraintEnd_toEndOf="@+id/txttitulod3"
-        app:layout_constraintStart_toStartOf="@+id/txttitulod3"
-        app:layout_constraintTop_toBottomOf="@+id/txttitulod3"
+        app:layout_constraintEnd_toEndOf="@+id/txtnombredocente"
+        app:layout_constraintStart_toStartOf="@+id/txtnombredocente"
+        app:layout_constraintTop_toBottomOf="@+id/txtnombredocente"
         app:srcCompat="@drawable/avatar1"
         tools:srcCompat="@drawable/avatar1" />
 
