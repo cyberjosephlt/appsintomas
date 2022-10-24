@@ -75,7 +75,7 @@ public class activity_docente extends AppCompatActivity {
                 .error(R.drawable.nofoto)
                 .into(imgdocente);
         //nombreUsuario=findViewById(R.id.txtnombredocente);
-        //nombreUsuario.setText(DataInfo.respuesta.getUser().getNombres());
+        //nombreUsuario.setText(DataInfo.respuesta.getsaludo());
 
 
     }

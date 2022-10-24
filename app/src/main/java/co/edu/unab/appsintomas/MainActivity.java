@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import co.edu.unab.appsintomas.data.DataInfo;
 import co.edu.unab.appsintomas.entities.RespuestaLogin;
+import co.edu.unab.appsintomas.entities.usuario;
 import co.edu.unab.appsintomas.network.SintomasApiCliente;
 import co.edu.unab.appsintomas.network.SintomasApiService;
 import retrofit2.Call;
@@ -20,6 +23,8 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
      private EditText useremail,userpassword;
      private SintomasApiService service;
+     private String id;
+     private usuario usuariorecibido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +54,10 @@ public void ingresar(View view){
                     if(respuesta!=null){
 
                         DataInfo.respuesta=respuesta;
-                        Toast.makeText(MainActivity.this, "respuesta: "+DataInfo.respuesta, Toast.LENGTH_LONG).show();
+
+                        id= String.valueOf(DataInfo.respuesta.getDocente_id());
+                        //Toast.makeText(MainActivity.this, "INFORMACIÓN: ID: "+DataInfo.respuesta.getDocente_id()+" TOKEN: "+DataInfo.respuesta.getToken(), Toast.LENGTH_SHORT).show();
+                        traerDatos();
                         startActivity(new Intent(
                                 MainActivity.this,
                                 activity_docente.class));
@@ -79,6 +87,29 @@ private void setup(){
 
 }
 private void traerDatos(){
+    String authToken=DataInfo.respuesta.getToken();
+    this.service.getDocente(id,"Bearer "+ authToken)
+            .enqueue(new Callback<usuario>() {
+                @Override
+                public void onResponse(Call<usuario> call, Response<usuario> response) {
+                    if (response.isSuccessful()) {
+                        //usuariorecibido = response.body();
+                      //DataInfo.respuesta.setsaludo("Bienvenid@: "+usuariorecibido.getNombres()+" "+usuariorecibido.getApellidoss());
+                        //Toast.makeText(MainActivity.this, "SALUDO: "+DataInfo.respuesta.getsaludo(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "SALUDO: "+response.body().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<usuario> call, Throwable t) {
+                    Toast.makeText(MainActivity.this, "Error al obtener el usuario"+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+
+
+
 
 }
 }

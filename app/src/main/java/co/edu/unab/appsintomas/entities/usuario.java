@@ -44,7 +44,9 @@ public class usuario {
     public usuario() {
     }
 
-    
+    public usuario(int user_id) {
+        this.user_id = user_id;
+    }
 
     public int getId() {
         return id;
