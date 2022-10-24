@@ -49,6 +49,7 @@ public void ingresar(View view){
                     if(respuesta!=null){
 
                         DataInfo.respuesta=respuesta;
+                        Toast.makeText(MainActivity.this, "respuesta: "+DataInfo.respuesta, Toast.LENGTH_LONG).show();
                         startActivity(new Intent(
                                 MainActivity.this,
                                 activity_docente.class));
@@ -77,5 +78,7 @@ private void setup(){
         this.service= SintomasApiCliente.getSintomasApiService();
 
 }
+private void traerDatos(){
 
+}
 }

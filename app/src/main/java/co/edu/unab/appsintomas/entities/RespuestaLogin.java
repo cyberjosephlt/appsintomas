@@ -2,6 +2,7 @@ package co.edu.unab.appsintomas.entities;
 
 public class RespuestaLogin {
 
+
     private usuario user;
     private String token;
 
@@ -9,9 +10,12 @@ public class RespuestaLogin {
         return user;
     }
 
+
+
     public void setUser(usuario user) {
         this.user = user;
     }
+
 
     public String getToken() {
         return token;
@@ -20,4 +24,10 @@ public class RespuestaLogin {
     public void setToken(String token) {
         this.token = token;
     }
+
+
+
+
+
+
 }

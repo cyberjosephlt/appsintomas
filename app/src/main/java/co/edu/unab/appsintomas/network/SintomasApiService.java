@@ -20,7 +20,7 @@ public interface SintomasApiService {
 
 
     @GET("docente")
-    Call<List<usuario>> getDocente(@Header("Autorizhation") String authToken);
+    Call<List<usuario>> getDocente(@Header("Autorizhation") String authToken,@Field("id") int id);
 
     @GET("estudiante")
     Call<List<usuario>> getEstudiante(@Header("Autorizhation") String authToken);
