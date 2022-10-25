@@ -23,8 +23,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
      private EditText useremail,userpassword;
      private SintomasApiService service;
-     private String id;
-     private usuario usuariorecibido;
+    private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,9 +54,9 @@ public void ingresar(View view){
 
                         DataInfo.respuesta=respuesta;
 
-                        id= String.valueOf(DataInfo.respuesta.getDocente_id());
+                        id= DataInfo.respuesta.getDocente_id();
                         //Toast.makeText(MainActivity.this, "INFORMACIÓN: ID: "+DataInfo.respuesta.getDocente_id()+" TOKEN: "+DataInfo.respuesta.getToken(), Toast.LENGTH_SHORT).show();
-                        traerDatos();
+
                         startActivity(new Intent(
                                 MainActivity.this,
                                 activity_docente.class));
@@ -86,30 +85,5 @@ private void setup(){
         this.service= SintomasApiCliente.getSintomasApiService();
 
 }
-private void traerDatos(){
-    String authToken=DataInfo.respuesta.getToken();
-    this.service.getDocente(id,"Bearer "+ authToken)
-            .enqueue(new Callback<usuario>() {
-                @Override
-                public void onResponse(Call<usuario> call, Response<usuario> response) {
-                    if (response.isSuccessful()) {
-                        //usuariorecibido = response.body();
-                      //DataInfo.respuesta.setsaludo("Bienvenid@: "+usuariorecibido.getNombres()+" "+usuariorecibido.getApellidoss());
-                        //Toast.makeText(MainActivity.this, "SALUDO: "+DataInfo.respuesta.getsaludo(), Toast.LENGTH_SHORT).show();
-                        Toast.makeText(MainActivity.this, "SALUDO: "+response.body().toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }
 
-                @Override
-                public void onFailure(Call<usuario> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Error al obtener el usuario"+t.getMessage(), Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
-
-
-
-
-}
 }

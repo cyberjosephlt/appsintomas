@@ -15,6 +15,18 @@ public class usuario {
     private String tipo_usuario;
 
 
+    public usuario(int id, int user_id,int documento, String nombres, String apellidos, String profesion,int estado,String url_foto) {
+        this.id = id;
+        this.user_id = user_id;
+        this.documento = documento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.profesion = profesion;
+        this.estado = estado;
+        this.url_foto = url_foto;
+
+    }
+
     public usuario(int id,int user_id, String nombres, String apellidos,String profesion, String contrasena, String tipo_doc, int documento, String url_foto, int estado, String tipo_usuario) {
         this.id = id;
         this.user_id=user_id;
@@ -29,17 +41,7 @@ public class usuario {
         this.tipo_usuario = tipo_usuario;
     }
 
-    public usuario(int id, int user_id, String nombres, String apellidos, String profesion, int documento, int estado,String url_foto) {
-        this.id = id;
-        this.user_id = user_id;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.profesion = profesion;
-        this.documento = documento;
-        this.estado = estado;
-        this.url_foto = url_foto;
 
-    }
 
     public usuario() {
     }
@@ -143,8 +145,8 @@ public class usuario {
                 ", nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", profesion='" + profesion + '\'' +
-                ", tipo_doc='" + tipo_doc + '\'' +
                 ", documento=" + documento +
+                ", url_foto='" + url_foto + '\'' +
                 ", estado=" + estado +
                 '}';
     }

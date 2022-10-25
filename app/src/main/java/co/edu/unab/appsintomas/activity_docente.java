@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -26,7 +27,9 @@ import retrofit2.Response;
 public class activity_docente extends AppCompatActivity {
     private ListView listasintomas;
     private SintomasApiService service;
-    private TextView nombreUsuario;
+    private TextView nombreUsuario,estadoUsuario;
+
+    private usuario usuariorecibido;
 
 
     @Override
@@ -63,20 +66,16 @@ public class activity_docente extends AppCompatActivity {
         listasintomas.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         //imagen picassoI
+        //usuario user2=traerDatos();
         usuario user= new usuario(1234,56789,"Bruce"
                 ,"Banner","HUlk","enojado2022","CE",56474,
                 "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Mark_Ruffalo_as_%22Professor_Hulk%22.jpeg/1280px-Mark_Ruffalo_as_%22Professor_Hulk%22.jpeg",
                 0,"DOCENTE");
-        String urlimg= user.getUrl_foto();
-        ImageView imgdocente= findViewById(R.id.imagendocente);
-        Picasso.get()
-                .load(urlimg)
-                .placeholder(R.drawable.loading)
-                .error(R.drawable.nofoto)
-                .into(imgdocente);
-        //nombreUsuario=findViewById(R.id.txtnombredocente);
-        //nombreUsuario.setText(DataInfo.respuesta.getsaludo());
 
+
+
+        //Toast.makeText(activity_docente.this, "INFORMACIÓN: "+DataInfo.respuesta.getUser(), Toast.LENGTH_SHORT).show();
+        traerDatos();
 
     }
 
@@ -91,6 +90,44 @@ public class activity_docente extends AppCompatActivity {
 
     }
 
+    private void traerDatos() {
+        String authToken = DataInfo.respuesta.getToken();
 
+        this.service.getDocente("Bearer " + authToken, DataInfo.respuesta.getDocente_id())
+                .enqueue(new Callback<usuario>() {
+                    @Override
+                    public void onResponse(Call<usuario> call, Response<usuario> response) {
+                        if (response.isSuccessful()) {
+                            usuariorecibido = response.body();
+                            DataInfo.respuesta.setUser(usuariorecibido);
+                            //Toast.makeText(MainActivity.this, "SALUDO: "+DataInfo.respuesta.getsaludo(), Toast.LENGTH_SHORT).show();
+                           Toast.makeText(activity_docente.this, "SALUDO: "+usuariorecibido, Toast.LENGTH_SHORT).show();
+                            String urlimg= usuariorecibido.getUrl_foto();
+                            ImageView imgdocente= findViewById(R.id.imagendocente);
+                            Picasso.get()
+                                    .load(urlimg)
+                                    .placeholder(R.drawable.loading)
+                                    .error(R.drawable.nofoto)
+                                    .into(imgdocente);
+                            nombreUsuario=findViewById(R.id.txtnombredocente);
+                            nombreUsuario.setText(usuariorecibido.getNombres());
+                            estadoUsuario=findViewById(R.id.txtestado);
+
+                                if(usuariorecibido.getestado()==0){
+                                     estadoUsuario.setText("Estado:SIN REPORTE");
+
+                                  } else{estadoUsuario.setText("Estado:CON REPORTE");}
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<usuario> call, Throwable t) {
+                        Toast.makeText(activity_docente.this, "Error al obtener el usuario" + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+    }
 
 }
